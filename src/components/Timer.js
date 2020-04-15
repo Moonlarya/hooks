@@ -13,6 +13,7 @@ const Timer = (props) => {
       timer = setTimeout(() => {
         setTime(time - props.step / second);
         setProgress(((props.time - time) / props.time) * 100);
+        props.onTick(time);
       }, props.step);
     }
     if (time <= 0 && isPlaying) {
