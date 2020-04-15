@@ -20,6 +20,9 @@
 .btn:hover{
   box-shadow: 0px 0px 10px rgba(34, 13, 51, 0.445);
 }
+.btn:focus{
+  outline: none;
+}
 
 .timer{
   font-size: 75px;
@@ -31,4 +34,17 @@
 .timerbtn{
   margin: 0 auto;
   width: max-content;
+}
+.flexwrap{
+  display: flex;
+  justify-content: space-between;
+  width: 800px;
+  margin: 0 auto;
+}
+
+.progress{
+  margin: 10px;
+  height: 5px;
+  border-radius: 3px;
+  background-color: rgb(146, 189, 73);
 }
