@@ -26,7 +26,9 @@ const Timer = (props) => {
       <div className="timer">{time}</div>
       <div
         className="progress"
-        style={{ width: `${100 - timerProgress}%` }}
+        style={{
+          width: `${time == props.time ? 100 : 100 - timerProgress}%`,
+        }}
       ></div>
       <div className="timerbtn">
         <button
