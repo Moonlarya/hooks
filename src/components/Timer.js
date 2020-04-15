@@ -3,7 +3,7 @@ import "../App.css";
 
 const Timer = (props) => {
   const [time, setTime] = useState(props.time);
-  const [isPlaying, setPlay] = useState(false);
+  const [isPlaying, setPlay] = useState(props.autostart);
   const [timerProgress, setProgress] = useState(100);
   let timer;
 
@@ -31,8 +31,8 @@ const Timer = (props) => {
           className="btn"
           onClick={() => {
             if (isPlaying) {
-              setPlay(false);
               clearTimeout(timer);
+              setPlay(false);
             } else {
               setPlay(true);
             }
@@ -43,10 +43,10 @@ const Timer = (props) => {
         <button
           className="btn"
           onClick={() => {
+            clearTimeout(timer);
             setTime(props.time);
             setPlay(false);
             setProgress(100);
-            clearTimeout(timer);
           }}
         >
           Reset
