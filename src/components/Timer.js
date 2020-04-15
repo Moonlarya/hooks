@@ -6,13 +6,14 @@ const Timer = (props) => {
   const [isPlaying, setPlay] = useState(props.autostart);
   const [timerProgress, setProgress] = useState(100);
   let timer;
+  const second = 1000;
 
   useEffect(() => {
     if (time > 0 && isPlaying) {
       timer = setTimeout(() => {
-        setTime(time - 1);
+        setTime(time - props.step / second);
         setProgress(((props.time - time) / props.time) * 100);
-      }, 1000);
+      }, props.step);
     }
     if (time <= 0 && isPlaying) {
       setPlay(false);
